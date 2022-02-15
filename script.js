@@ -6,7 +6,7 @@ let playerScore = 0;
 let scoreBox = document.querySelector(".score-box");
 let timer = document.querySelector(".text");
 let totalFruits = 48;
-let speedrun = 0;
+let speedrun = 0.00;
 
 for(let i = 1; i <= 66; ++i){
     allGridBoxes.push(document.querySelector(`.box${i}`));
@@ -49,11 +49,13 @@ allGridBoxes[63].removeChild(allGridBoxes[63].firstElementChild);
 setInterval(() => {
     if((totalFruits < 48) && (totalFruits > 0)){
         setTimeout(() => {
-            speedrun += 1;
+            speedrun += 0.01;
+            speedrun = speedrun.toFixed(2);
+            speedrun = parseFloat(speedrun);
             timer.textContent = `${speedrun}s`
         }, 1);
     }
-}, 1000);
+}, 10);
 setTimeout(() => {
     let clownparty = new Audio("sounds/clownparty.mp3")
     clownparty.play();
