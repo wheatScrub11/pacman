@@ -57,8 +57,10 @@ setInterval(() => {
     }
 }, 10);
 setTimeout(() => {
+    /*
     let clownparty = new Audio("sounds/clownparty.mp3")
     clownparty.play();
+    */
 }, 200);
 
 
